@@ -1,0 +1,25 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        name: "Sodeom Support"
+        url: "https://sodeom.com"
+      }
+      description: "The Sodeom Search API enables users to perform private searches without any tracking, returning results in a structured JSON format. It supports pagination and allows users to query using specific search terms."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://sodeom.com"
+        }
+      ]
+      termsOfService: "https://sodeom.com"
+      title: "Sodeom Search API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

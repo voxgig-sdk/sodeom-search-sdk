@@ -1,0 +1,184 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Sodeom Search API",
+    "description": "The Sodeom Search API enables users to perform private searches without any tracking, returning results in a structured JSON format. It supports pagination and allows users to query using specific search terms.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Sodeom Support",
+      "url": "https://sodeom.com"
+    },
+    "termsOfService": "https://sodeom.com"
+  },
+  "servers": [
+    {
+      "url": "https://sodeom.com",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api/search": {
+      "get": {
+        "summary": "Search for content",
+        "description": "Returns JSON-formatted search results with support for pagination. Performs private searches without any tracking.",
+        "operationId": "searchContent",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "Search query text",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "privacy search"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Pagination page number",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            },
+            "example": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchResponse"
+                },
+                "example": {
+                  "results": [
+                    {
+                      "title": "Privacy Search Tools",
+                      "link": "https://example.com/privacy",
+                      "description": "Learn about privacy-focused search engines"
+                    }
+                  ],
+                  "query": "privacy search",
+                  "page": 1,
+                  "has_next": true,
+                  "has_prev": false,
+                  "total_results": 10
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Missing required query parameter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "error": "Missing q parameter"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error - Search provider or parsing errors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "error": "Search provider or parsing errors"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SearchResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "description": "Array of search results",
+            "items": {
+              "$ref": "#/components/schemas/SearchResult"
+            }
+          },
+          "query": {
+            "type": "string",
+            "description": "The search query that was executed"
+          },
+          "page": {
+            "type": "integer",
+            "description": "Current page number",
+            "minimum": 1
+          },
+          "has_next": {
+            "type": "boolean",
+            "description": "Indicates if there is a next page of results"
+          },
+          "has_prev": {
+            "type": "boolean",
+            "description": "Indicates if there is a previous page of results"
+          },
+          "total_results": {
+            "type": "integer",
+            "description": "Total number of results on current page"
+          }
+        },
+        "required": [
+          "results",
+          "query",
+          "page",
+          "has_next",
+          "has_prev",
+          "total_results"
+        ]
+      },
+      "SearchResult": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Title of the search result"
+          },
+          "link": {
+            "type": "string",
+            "description": "URL of the search result",
+            "format": "uri"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description or snippet of the search result"
+          }
+        },
+        "required": [
+          "title",
+          "link",
+          "description"
+        ]
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message describing what went wrong"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      }
+    }
+  }
+}
