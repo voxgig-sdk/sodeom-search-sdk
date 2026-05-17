@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/sodeom-search-sdk/core"
+	"github.com/voxgig-sdk/sodeom-search-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/sodeom-search-sdk/go/utility/struct"
 )
 
 type SearchEntity struct {

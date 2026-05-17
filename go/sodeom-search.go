@@ -1,10 +1,10 @@
 package voxgigsodeomsearchsdk
 
 import (
-	"github.com/voxgig-sdk/sodeom-search-sdk/core"
-	"github.com/voxgig-sdk/sodeom-search-sdk/entity"
-	"github.com/voxgig-sdk/sodeom-search-sdk/feature"
-	_ "github.com/voxgig-sdk/sodeom-search-sdk/utility"
+	"github.com/voxgig-sdk/sodeom-search-sdk/go/core"
+	"github.com/voxgig-sdk/sodeom-search-sdk/go/entity"
+	"github.com/voxgig-sdk/sodeom-search-sdk/go/feature"
+	_ "github.com/voxgig-sdk/sodeom-search-sdk/go/utility"
 )
 
 // Type aliases preserve external API.
