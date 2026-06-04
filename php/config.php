@@ -20,9 +20,6 @@ class SodeomSearchConfig
             ],
             "options" => [
                 "base" => "https://sodeom.com",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],

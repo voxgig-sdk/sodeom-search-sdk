@@ -93,14 +93,12 @@ func searchDirectSetup(mockres any) *searchDirectSetupResult {
 	env := envOverride(map[string]any{
 		"SODEOMSEARCH_TEST_SEARCH_ENTID": map[string]any{},
 		"SODEOMSEARCH_TEST_LIVE":    "FALSE",
-		"SODEOMSEARCH_APIKEY":       "NONE",
 	})
 
 	live := env["SODEOMSEARCH_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["SODEOMSEARCH_APIKEY"],
 		}
 		client := sdk.NewSodeomSearchSDK(mergedOpts)
 

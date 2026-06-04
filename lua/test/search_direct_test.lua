@@ -63,14 +63,12 @@ function search_direct_setup(mockres)
   local env = runner.env_override({
     ["SODEOMSEARCH_TEST_SEARCH_ENTID"] = {},
     ["SODEOMSEARCH_TEST_LIVE"] = "FALSE",
-    ["SODEOMSEARCH_APIKEY"] = "NONE",
   })
 
   local live = env["SODEOMSEARCH_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["SODEOMSEARCH_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {
