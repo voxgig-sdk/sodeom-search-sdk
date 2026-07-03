@@ -82,12 +82,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'SODEOMSEARCH_TEST_SEARCH_ENTID': {},
     'SODEOMSEARCH_TEST_LIVE': 'FALSE',
+    'SODEOMSEARCH_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.SODEOMSEARCH_TEST_LIVE
 
   if (live) {
     const client = new SodeomSearchSDK({
+      apikey: env.SODEOMSEARCH_APIKEY,
     })
 
     let idmap: any = env['SODEOMSEARCH_TEST_SEARCH_ENTID']

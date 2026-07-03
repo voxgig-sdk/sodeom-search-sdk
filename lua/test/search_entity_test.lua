@@ -92,6 +92,7 @@ function search_basic_setup(extra)
     ["SODEOMSEARCH_TEST_SEARCH_ENTID"] = idmap,
     ["SODEOMSEARCH_TEST_LIVE"] = "FALSE",
     ["SODEOMSEARCH_TEST_EXPLAIN"] = "FALSE",
+    ["SODEOMSEARCH_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -103,6 +104,7 @@ function search_basic_setup(extra)
   if env["SODEOMSEARCH_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
+        apikey = env["SODEOMSEARCH_APIKEY"],
       },
       extra or {},
     })

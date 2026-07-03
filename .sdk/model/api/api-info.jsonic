@@ -18,26 +18,7 @@ main: {
       termsOfService: "https://sodeom.com"
       title: "Sodeom Search API"
       version: "1.0.0"
-      tagline: "Query the web through Sodeom's privacy-focused search and get paginated JSON results"
-      homepage: "https://sodeom.com"
-      docs_url: "https://sodeom.com/apis/search"
-      license_short: "No explicit licence stated; usage governed by Sodeom"
-      license_md: `- No formal licence terms are published on the API documentation page
-- Sodeom is presented as an independent privacy-focused search engine; check the project on GitHub (github.com/sodeom) for source-code licence details
-- Treat as a third-party hosted service: review terms on the Sodeom site before production use`
-      about_md: `[Sodeom Search](https://sodeom.com) is an independent, privacy-focused search engine that exposes its web-search results through a small JSON HTTP API. The service is built by Abdul Hadi and emphasises no tracking, no user profiling, and no personalised advertising.
-
-What you get from the API:
-
-- A single \`GET /api/search\` endpoint that accepts a query string and an optional page number
-- A JSON response containing a \`results\` array of objects with \`title\`, \`link\`, and \`description\` fields
-- Pagination metadata including the echoed query, current page, next/previous page indicators, and a total result count
-
-Operational notes: CORS is enabled, so the endpoint can be called directly from browser code. No authentication scheme is documented. The API returns HTTP 400 when the required \`q\` parameter is missing and HTTP 500 on backend provider or parsing failures. Rate limits are not published.`
-      entity_desc: {
-        search: "Web search results retrieved via `GET /api/search?q={query}&page={n}`, returning a paginated list of title/link/description hits along with query and pagination metadata."
-      }
-      auth: false
     }
   }
 }
+

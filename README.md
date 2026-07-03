@@ -1,20 +1,8 @@
 # SodeomSearch SDK
 
-Query the web through Sodeom's privacy-focused search and get paginated JSON results
+Sodeom Search API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Sodeom Search API
-
-[Sodeom Search](https://sodeom.com) is an independent, privacy-focused search engine that exposes its web-search results through a small JSON HTTP API. The service is built by Abdul Hadi and emphasises no tracking, no user profiling, and no personalised advertising.
-
-What you get from the API:
-
-- A single `GET /api/search` endpoint that accepts a query string and an optional page number
-- A JSON response containing a `results` array of objects with `title`, `link`, and `description` fields
-- Pagination metadata including the echoed query, current page, next/previous page indicators, and a total result count
-
-Operational notes: CORS is enabled, so the endpoint can be called directly from browser code. No authentication scheme is documented. The API returns HTTP 400 when the required `q` parameter is missing and HTTP 500 on backend provider or parsing failures. Rate limits are not published.
 
 ## Try it
 
@@ -48,29 +36,31 @@ gem install sodeom-search-sdk
 luarocks install sodeom-search-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { SodeomSearchSDK } from 'sodeom-search'
 
-const client = new SodeomSearchSDK({})
+const client = new SodeomSearchSDK({
+  apikey: process.env.SODEOM-SEARCH_APIKEY,
+})
 
 // List all searchs
 const searchs = await client.Search().list()
+console.log(searchs.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -100,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Search** | Web search results retrieved via `GET /api/search?q={query}&page={n}`, returning a paginated list of title/link/description hits along with query and pagination metadata. | `/api/search` |
+| **Search** |  | `/api/search` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -110,12 +100,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from sodeomsearch_sdk import SodeomSearchSDK
 
-client = SodeomSearchSDK({})
+client = SodeomSearchSDK({
+    "apikey": os.environ.get("SODEOM-SEARCH_APIKEY"),
+})
 
 # List all searchs
-searchs, err = client.Search(None).list(None, None)
+searchs, err = client.Search().list()
+print(searchs)
 ```
 
 ### PHP
@@ -124,10 +118,13 @@ searchs, err = client.Search(None).list(None, None)
 <?php
 require_once 'sodeomsearch_sdk.php';
 
-$client = new SodeomSearchSDK([]);
+$client = new SodeomSearchSDK([
+    "apikey" => getenv("SODEOM-SEARCH_APIKEY"),
+]);
 
 // List all searchs
-[$searchs, $err] = $client->Search(null)->list(null, null);
+[$searchs, $err] = $client->Search()->list();
+print_r($searchs);
 ```
 
 ### Golang
@@ -135,10 +132,13 @@ $client = new SodeomSearchSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/sodeom-search-sdk/go"
 
-client := sdk.NewSodeomSearchSDK(map[string]any{})
+client := sdk.NewSodeomSearchSDK(map[string]any{
+    "apikey": os.Getenv("SODEOM-SEARCH_APIKEY"),
+})
 
 // List all searchs
 searchs, err := client.Search(nil).List(nil, nil)
+fmt.Println(searchs)
 ```
 
 ### Ruby
@@ -146,10 +146,13 @@ searchs, err := client.Search(nil).List(nil, nil)
 ```ruby
 require_relative "SodeomSearch_sdk"
 
-client = SodeomSearchSDK.new({})
+client = SodeomSearchSDK.new({
+  "apikey" => ENV["SODEOM-SEARCH_APIKEY"],
+})
 
 # List all searchs
-searchs, err = client.Search(nil).list(nil, nil)
+searchs, err = client.Search().list
+puts searchs
 ```
 
 ### Lua
@@ -157,10 +160,13 @@ searchs, err = client.Search(nil).list(nil, nil)
 ```lua
 local sdk = require("sodeom-search_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("SODEOM-SEARCH_APIKEY"),
+})
 
 -- List all searchs
-local searchs, err = client:Search(nil):list(nil, nil)
+local searchs, err = client:Search():list()
+print(searchs)
 ```
 
 ## Unit testing in offline mode
@@ -179,25 +185,21 @@ const result = await client.Search().load({ id: 'test01' })
 ### Python
 
 ```python
-client = SodeomSearchSDK.test(None, None)
-result, err = client.Search(None).load(
-    {"id": "test01"}, None
-)
+client = SodeomSearchSDK.test()
+result, err = client.Search().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = SodeomSearchSDK::test(null, null);
-[$result, $err] = $client->Search(null)->load(
-    ["id" => "test01"], null
-);
+$client = SodeomSearchSDK::test();
+[$result, $err] = $client->Search()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Search(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -206,19 +208,15 @@ result, err := client.Search(nil).Load(
 ### Ruby
 
 ```ruby
-client = SodeomSearchSDK.test(nil, nil)
-result, err = client.Search(nil).load(
-  { "id" => "test01" }, nil
-)
+client = SodeomSearchSDK.test
+result, err = client.Search().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Search(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Search():load({ id = "test01" })
 ```
 
 ## How it works
@@ -322,15 +320,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Sodeom Search API
-
-- Upstream: [https://sodeom.com](https://sodeom.com)
-- API docs: [https://sodeom.com/apis/search](https://sodeom.com/apis/search)
-
-- No formal licence terms are published on the API documentation page
-- Sodeom is presented as an independent privacy-focused search engine; check the project on GitHub (github.com/sodeom) for source-code licence details
-- Treat as a third-party hosted service: review terms on the Sodeom site before production use
 
 ---
 

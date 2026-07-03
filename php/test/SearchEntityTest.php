@@ -86,6 +86,7 @@ function search_basic_setup($extra)
         "SODEOMSEARCH_TEST_SEARCH_ENTID" => $idmap,
         "SODEOMSEARCH_TEST_LIVE" => "FALSE",
         "SODEOMSEARCH_TEST_EXPLAIN" => "FALSE",
+        "SODEOMSEARCH_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,6 +98,7 @@ function search_basic_setup($extra)
     if ($env["SODEOMSEARCH_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
+                "apikey" => $env["SODEOMSEARCH_APIKEY"],
             ],
             $extra ?? [],
         ]);

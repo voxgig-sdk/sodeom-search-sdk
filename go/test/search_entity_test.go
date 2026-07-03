@@ -119,6 +119,7 @@ func searchBasicSetup(extra map[string]any) *entityTestSetup {
 		"SODEOMSEARCH_TEST_SEARCH_ENTID": idmap,
 		"SODEOMSEARCH_TEST_LIVE":      "FALSE",
 		"SODEOMSEARCH_TEST_EXPLAIN":   "FALSE",
+		"SODEOMSEARCH_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["SODEOMSEARCH_TEST_SEARCH_ENTID"])
@@ -129,6 +130,7 @@ func searchBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["SODEOMSEARCH_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["SODEOMSEARCH_APIKEY"],
 			},
 			extra,
 		})
