@@ -10,7 +10,7 @@ The Python SDK for the SodeomSearch API — an entity-oriented client following 
 
 ## Install
 ```bash
-pip install sodeom-search-sdk
+pip install voxgig-sdk-sodeom-search
 ```
 
 Or install from source:

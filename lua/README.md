@@ -10,7 +10,7 @@ The Lua SDK for the SodeomSearch API — an entity-oriented client using Lua con
 
 ## Install
 ```bash
-luarocks install sodeom-search-sdk
+luarocks install voxgig-sdk-sodeom-search
 ```
 
 If the module is not yet published, add the source directory to

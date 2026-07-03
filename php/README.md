@@ -10,7 +10,7 @@ The PHP SDK for the SodeomSearch API — an entity-oriented client using PHP con
 
 ## Install
 ```bash
-composer require voxgig/sodeom-search-sdk
+composer require voxgig-sdk/sodeom-search
 ```
 
 

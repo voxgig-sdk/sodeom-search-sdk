@@ -10,7 +10,7 @@ The TypeScript SDK for the SodeomSearch API — a type-safe, entity-oriented cli
 
 ## Install
 ```bash
-npm install sodeom-search
+npm install @voxgig-sdk/sodeom-search
 ```
 ## Tutorial: your first API call
 

@@ -10,13 +10,13 @@ The Ruby SDK for the SodeomSearch API — an entity-oriented client using idioma
 
 ## Install
 ```bash
-gem install sodeom-search-sdk
+gem install voxgig-sdk-sodeom-search
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "sodeom-search-sdk"
+gem "voxgig-sdk-sodeom-search"
 ```
 
 Then run:
