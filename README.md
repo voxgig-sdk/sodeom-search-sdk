@@ -26,9 +26,11 @@ import { SodeomSearchSDK } from '@voxgig-sdk/sodeom-search'
 
 const client = new SodeomSearchSDK()
 
-// List all searchs
-const searchs = await client.search.list()
-console.log(searchs.data)
+// List all searchs (returns Search[])
+const searchs = await client.Search().list()
+for (const search of searchs) {
+  console.log(search)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -83,9 +85,10 @@ from sodeomsearch_sdk import SodeomSearchSDK
 
 client = SodeomSearchSDK()
 
-# List all searchs
-searchs = client.search.list()
-print(searchs)
+# List all searchs (returns a list, raises on error)
+searchs = client.Search().list({})
+for search in searchs:
+    print(search)
 ```
 
 ### PHP
@@ -96,8 +99,8 @@ require_once 'sodeomsearch_sdk.php';
 
 $client = new SodeomSearchSDK();
 
-// List all searchs (throws on error)
-$searchs = $client->search()->list();
+// List all searchs (returns an array; throws on error)
+$searchs = $client->Search()->list();
 print_r($searchs);
 ```
 
@@ -120,8 +123,8 @@ require_relative "SodeomSearch_sdk"
 
 client = SodeomSearchSDK.new
 
-# List all searchs
-searchs = client.search.list
+# List all searchs (returns an Array; raises on error)
+searchs = client.Search.list
 puts searchs
 ```
 
@@ -133,7 +136,7 @@ local sdk = require("sodeom-search_sdk")
 local client = sdk.new()
 
 -- List all searchs
-local searchs, err = client:search():list()
+local searchs, err = client:Search():list()
 print(searchs)
 ```
 
@@ -146,22 +149,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = SodeomSearchSDK.test()
-const result = await client.search.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const search = await client.Search().load({ id: 'test01' })
+// search is a bare Search populated with mock data
+console.log(search)
 ```
 
 ### Python
 
 ```python
 client = SodeomSearchSDK.test()
-result = client.search.load({"id": "test01"})
+search = client.Search().load({"id": "test01"})
+print(search)
 ```
 
 ### PHP
 
 ```php
-$client = SodeomSearchSDK::test();
-$result = $client->search()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = SodeomSearchSDK::test([
+    "entity" => ["search" => ["test01" => ["id" => "test01"]]],
+]);
+$search = $client->Search()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -176,15 +184,18 @@ result, err := client.Search(nil).Load(
 ### Ruby
 
 ```ruby
-client = SodeomSearchSDK.test
-result = client.search.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = SodeomSearchSDK.test({
+  "entity" => { "search" => { "test01" => { "id" => "test01" } } },
+})
+search = client.Search.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:search():load({ id = "test01" })
+local result, err = client:Search():load({ id = "test01" })
 ```
 
 ## How it works
@@ -232,6 +243,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

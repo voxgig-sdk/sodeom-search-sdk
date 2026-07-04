@@ -31,14 +31,16 @@ from sodeomsearch_sdk import SodeomSearchSDK
 client = SodeomSearchSDK()
 ```
 
-### 2. List searchs
+### 2. List search records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.search.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    searchs = client.Search().list({})
+    for search in searchs:
+        print(search)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -86,8 +88,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = SodeomSearchSDK.test()
 
-result = client.search.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+search = client.Search().load({"id": "test01"})
+# search contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -222,7 +225,7 @@ API path: `/api/search`
 
 ### Search
 
-Create an instance: `const search = client.search`
+Create an instance: `search = client.Search()`
 
 #### Operations
 
@@ -240,8 +243,8 @@ Create an instance: `const search = client.search`
 
 #### Example: List
 
-```ts
-const searchs = await client.search.list()
+```python
+searchs = client.Search().list({})
 ```
 
 
@@ -315,7 +318,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-search = client.search
+search = client.Search()
 search.load({"id": "example_id"})
 
 # search.data_get() now returns the loaded search data
