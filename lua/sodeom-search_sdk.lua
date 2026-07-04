@@ -244,6 +244,19 @@ end
 
 
 
+-- Idiomatic facade: client:search():list() / client:search():load({ id = ... })
+function SodeomSearchSDK:search(data)
+  local EntityMod = require("entity.search_entity")
+  if data == nil then
+    if self._search == nil then
+      self._search = EntityMod.new(self, nil)
+    end
+    return self._search
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:search() instead.
 function SodeomSearchSDK:Search(data)
   local EntityMod = require("entity.search_entity")
   return EntityMod.new(self, data)

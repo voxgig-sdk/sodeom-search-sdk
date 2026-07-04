@@ -113,7 +113,6 @@ function basicSetup(extra?: any) {
     'SODEOM_SEARCH_TEST_SEARCH_ENTID': idmap,
     'SODEOM_SEARCH_TEST_LIVE': 'FALSE',
     'SODEOM_SEARCH_TEST_EXPLAIN': 'FALSE',
-    'SODEOM_SEARCH_APIKEY': 'NONE',
   })
 
   idmap = env['SODEOM_SEARCH_TEST_SEARCH_ENTID']
@@ -123,7 +122,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new SodeomSearchSDK(merge([
       {
-        apikey: env.SODEOM_SEARCH_APIKEY,
       },
       extra
     ]))
