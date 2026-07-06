@@ -8,7 +8,7 @@ Complete API reference for the SodeomSearch Python SDK.
 ### Constructor
 
 ```python
-from sodeom-search_sdk import SodeomSearchSDK
+from sodeomsearch_sdk import SodeomSearchSDK
 
 client = SodeomSearchSDK(options)
 ```
@@ -87,18 +87,18 @@ search = client.Search()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | Yes |  |
-| `link` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
+| `description` | `str` | Yes |  |
+| `link` | `str` | Yes |  |
+| `title` | `str` | Yes |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Search().list({})
+results = client.Search().list()
 for search in results:
     print(search)
 ```

@@ -11,5 +11,9 @@ export interface Search {
   title: string
 }
 
-export type SearchListMatch = Partial<Search>
+export interface SearchListMatch {
+  description?: string
+  link?: string
+  title?: string
+}
 

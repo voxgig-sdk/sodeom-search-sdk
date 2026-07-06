@@ -97,9 +97,9 @@ search := client.Search(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | Yes |  |
-| `link` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
+| `description` | `string` | Yes |  |
+| `link` | `string` | Yes |  |
+| `title` | `string` | Yes |  |
 
 ### Operations
 

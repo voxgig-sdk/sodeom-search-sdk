@@ -15,8 +15,7 @@ type Search struct {
 	Title string `json:"title"`
 }
 
-// SearchListMatch mirrors the search fields as an all-optional match
-// filter (Go analog of Partial<Search>).
+// SearchListMatch is the typed request payload for Search.ListTyped.
 type SearchListMatch struct {
 	Description *string `json:"description,omitempty"`
 	Link *string `json:"link,omitempty"`

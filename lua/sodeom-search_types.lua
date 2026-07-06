@@ -12,6 +12,9 @@
 ---@field title string
 
 ---@class SearchListMatch
+---@field description? string
+---@field link? string
+---@field title? string
 
 local M = {}
 
