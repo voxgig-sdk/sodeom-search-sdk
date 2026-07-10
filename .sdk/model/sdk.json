@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -230,15 +227,18 @@
           "url": "https://sodeom.com"
         },
         "description": "The Sodeom Search API enables users to perform private searches without any tracking, returning results in a structured JSON format. It supports pagination and allows users to query using specific search terms.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://sodeom.com"
           }
         ],
+        "summary": "The Sodeom Search API enables users to perform private searches without any tracking, returning results in a structured JSON format.",
         "termsOfService": "https://sodeom.com",
         "title": "Sodeom Search API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://sodeom.com"
       },
       "option": {},
       "target": {
@@ -291,6 +291,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -341,6 +344,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

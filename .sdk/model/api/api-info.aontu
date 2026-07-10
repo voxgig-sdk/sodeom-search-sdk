@@ -16,10 +16,10 @@ main: {
           url: "https://sodeom.com"
         }
       ]
+      summary: "The Sodeom Search API enables users to perform private searches without any tracking, returning results in a structured JSON format."
       termsOfService: "https://sodeom.com"
       title: "Sodeom Search API"
       version: "1.0.0"
+      website: "https://sodeom.com"
     }
   }
-}
-
