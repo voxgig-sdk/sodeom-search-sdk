@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- SodeomSearch SDK exists test
 
 local sdk = require("sodeom-search_sdk")
 
