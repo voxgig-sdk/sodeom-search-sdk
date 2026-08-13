@@ -35,7 +35,9 @@ const client = new SodeomSearchSDK()
 
 ### 2. List search records
 
-`list()` resolves to an array of Search objects — iterate it directly:
+`list()` resolves to an array of Search ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const searchs = await client.Search().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = SodeomSearchSDK.test()
 
 const search = await client.Search().list()
-// search is a bare entity populated with mock response data
+// search is the entity, populated with mock response data
+// — call search.data() for the record itself
 console.log(search)
 ```
 

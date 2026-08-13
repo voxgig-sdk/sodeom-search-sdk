@@ -23,8 +23,8 @@ module SodeomSearchTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("SODEOMSEARCH_TEST_LIVE")
-    override = getenv("SODEOMSEARCH_TEST_OVERRIDE")
+    live = getenv("SODEOM_SEARCH_TEST_LIVE")
+    override = getenv("SODEOM_SEARCH_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module SodeomSearchTestRunner
       end
     end
 
-    explain = getenv("SODEOMSEARCH_TEST_EXPLAIN")
-    m["SODEOMSEARCH_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("SODEOM_SEARCH_TEST_EXPLAIN")
+    m["SODEOM_SEARCH_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

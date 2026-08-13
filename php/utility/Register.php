@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ SodeomSearchUtility::setRegistrar(function (SodeomSearchUtility $u): void {
     $u->prepare_params = [SodeomSearchPrepareParams::class, 'call'];
     $u->prepare_path = [SodeomSearchPreparePath::class, 'call'];
     $u->prepare_query = [SodeomSearchPrepareQuery::class, 'call'];
+    $u->graphql_body = [SodeomSearchGraphql::class, 'body'];
+    $u->graphql_errors = [SodeomSearchGraphql::class, 'errors'];
     $u->result_basic = [SodeomSearchResultBasic::class, 'call'];
     $u->result_body = [SodeomSearchResultBody::class, 'call'];
     $u->result_headers = [SodeomSearchResultHeaders::class, 'call'];

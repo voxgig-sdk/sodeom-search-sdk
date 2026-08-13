@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ SodeomSearchUtility.registrar = ->(u) {
   u.prepare_params = SodeomSearchUtilities::PrepareParams
   u.prepare_path = SodeomSearchUtilities::PreparePath
   u.prepare_query = SodeomSearchUtilities::PrepareQuery
+  u.graphql_body = SodeomSearchUtilities::GraphqlBody
+  u.graphql_errors = SodeomSearchUtilities::GraphqlErrors
   u.result_basic = SodeomSearchUtilities::ResultBasic
   u.result_body = SodeomSearchUtilities::ResultBody
   u.result_headers = SodeomSearchUtilities::ResultHeaders

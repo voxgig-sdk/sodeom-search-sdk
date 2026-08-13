@@ -77,6 +77,7 @@ module SodeomSearchConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/search",
                   "parts" => [
@@ -91,7 +92,7 @@ module SodeomSearchConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.results`",
                   },
                   "index$" => 0,
                 },

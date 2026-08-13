@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# SodeomSearch SDK exists test
 
 import pytest
 from sodeomsearch_sdk import SodeomSearchSDK

@@ -19,11 +19,15 @@ import {
 describe('SearchDirect', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when SODEOMSEARCH_TEST_LIVE=TRUE.
-  afterEach(liveDelay('SODEOMSEARCH_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when SODEOM_SEARCH_TEST_LIVE=TRUE.
+  afterEach(liveDelay('SODEOM_SEARCH_TEST_LIVE'))
 
   test('direct-exists', async () => {
     const sdk = new SodeomSearchSDK({
+      // Concrete base: a live construction must satisfy any server
+      // variables a templated base URL declares; overriding base with a
+      // literal (as the direct flow tests do) sidesteps the requirement.
+      base: 'http://localhost:8080',
       system: { fetch: async () => ({}) }
     })
     assert('function' === typeof sdk.direct)
@@ -80,17 +84,17 @@ function directSetup(mockres?: any) {
   const calls: any[] = []
 
   const env = envOverride({
-    'SODEOMSEARCH_TEST_SEARCH_ENTID': {},
-    'SODEOMSEARCH_TEST_LIVE': 'FALSE',
+    'SODEOM_SEARCH_TEST_SEARCH_ENTID': {},
+    'SODEOM_SEARCH_TEST_LIVE': 'FALSE',
   })
 
-  const live = 'TRUE' === env.SODEOMSEARCH_TEST_LIVE
+  const live = 'TRUE' === env.SODEOM_SEARCH_TEST_LIVE
 
   if (live) {
     const client = new SodeomSearchSDK({
     })
 
-    let idmap: any = env['SODEOMSEARCH_TEST_SEARCH_ENTID']
+    let idmap: any = env['SODEOM_SEARCH_TEST_SEARCH_ENTID']
     if ('string' === typeof idmap && idmap.startsWith('{')) {
       idmap = JSON.parse(idmap)
     }

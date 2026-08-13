@@ -61,11 +61,11 @@ function search_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["SODEOMSEARCH_TEST_SEARCH_ENTID"] = {},
-    ["SODEOMSEARCH_TEST_LIVE"] = "FALSE",
+    ["SODEOM_SEARCH_TEST_SEARCH_ENTID"] = {},
+    ["SODEOM_SEARCH_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["SODEOMSEARCH_TEST_LIVE"] == "TRUE"
+  local live = env["SODEOM_SEARCH_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

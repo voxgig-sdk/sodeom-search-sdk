@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import SodeomSearchSDK
-from core.error import SodeomSearchError
-from core.result import SodeomSearchResult
-from core.response import SodeomSearchResponse
-from core.spec import SodeomSearchSpec
-from feature.base_feature import SodeomSearchBaseFeature
+from projectname_sdk.core.error import SodeomSearchError
+from projectname_sdk.core.result import SodeomSearchResult
+from projectname_sdk.core.response import SodeomSearchResponse
+from projectname_sdk.core.spec import SodeomSearchSpec
+from projectname_sdk.feature.base_feature import SodeomSearchBaseFeature
 
 
 def _client():

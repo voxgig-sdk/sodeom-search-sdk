@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import SodeomSearchControl
-from core.error import SodeomSearchError
-from core.result import SodeomSearchResult
-from core.spec import SodeomSearchSpec
+from sodeomsearch_sdk.config import make_config
+from sodeomsearch_sdk.features import _make_feature
+from sodeomsearch_sdk.core.control import SodeomSearchControl
+from sodeomsearch_sdk.core.error import SodeomSearchError
+from sodeomsearch_sdk.core.result import SodeomSearchResult
+from sodeomsearch_sdk.core.spec import SodeomSearchSpec
 
 
 # True when this SDK was generated with the named feature.
