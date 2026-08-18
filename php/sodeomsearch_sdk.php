@@ -40,7 +40,7 @@ class SodeomSearchSDK
         $utility = new SodeomSearchUtility();
         $this->_utility = $utility;
 
-        $config = SodeomSearchConfig::make_config();
+        $config = SodeomSearchConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

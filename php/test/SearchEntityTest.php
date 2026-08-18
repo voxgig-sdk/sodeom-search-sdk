@@ -40,7 +40,7 @@ class SearchEntityTest extends TestCase
         $this->assertCount(3, $seen);
 
         // Inbound: streaming active -> yields each item from the feature.
-        $cfg = SodeomSearchConfig::make_config();
+        $cfg = SodeomSearchConfig::shared_config();
         if (isset($cfg["feature"]) && is_array($cfg["feature"]) && isset($cfg["feature"]["streaming"])) {
             $sdk = SodeomSearchSDK::test($seed, ["feature" => ["streaming" => ["active" => true]]]);
             $got = [];
