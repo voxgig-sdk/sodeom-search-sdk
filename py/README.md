@@ -243,9 +243,9 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `link` |  |
-| `title` |  |
+| `description` | Description or snippet of the search result |
+| `link` | URL of the search result |
+| `title` | Title of the search result |
 
 Operations: List.
 
@@ -270,9 +270,9 @@ Create an instance: `search = client.Search()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `str` |  |
-| `link` | `str` |  |
-| `title` | `str` |  |
+| `description` | `str` | Description or snippet of the search result |
+| `link` | `str` | URL of the search result |
+| `title` | `str` | Title of the search result |
 
 #### Example: List
 

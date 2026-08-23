@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "SodeomSearch",
+			"slug": "sodeom-search",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -34,16 +37,19 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "description",
 						"req": true,
+						"short": "Description or snippet of the search result",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "link",
 						"req": true,
+						"short": "URL of the search result",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "title",
 						"req": true,
+						"short": "Title of the search result",
 						"type": "`$STRING`",
 					},
 				},

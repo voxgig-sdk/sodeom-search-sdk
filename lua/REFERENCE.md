@@ -90,9 +90,9 @@ local search = client:Search(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `string` | Yes |  |
-| `link` | `string` | Yes |  |
-| `title` | `string` | Yes |  |
+| `description` | `string` | Yes | Description or snippet of the search result |
+| `link` | `string` | Yes | URL of the search result |
+| `title` | `string` | Yes | Title of the search result |
 
 ### Operations
 

@@ -87,9 +87,9 @@ search = client.Search()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `str` | Yes |  |
-| `link` | `str` | Yes |  |
-| `title` | `str` | Yes |  |
+| `description` | `str` | Yes | Description or snippet of the search result |
+| `link` | `str` | Yes | URL of the search result |
+| `title` | `str` | Yes | Title of the search result |
 
 ### Operations
 

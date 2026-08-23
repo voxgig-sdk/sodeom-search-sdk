@@ -33,6 +33,9 @@ class SodeomSearchConfig
         return [
             "main" => [
                 "name" => "SodeomSearch",
+                "slug" => "sodeom-search",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
@@ -56,16 +59,19 @@ class SodeomSearchConfig
             [
               'name' => 'description',
               'req' => true,
+              'short' => 'Description or snippet of the search result',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'link',
               'req' => true,
+              'short' => 'URL of the search result',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'title',
               'req' => true,
+              'short' => 'Title of the search result',
               'type' => '`$STRING`',
             ],
           ],

@@ -6,7 +6,7 @@ The Golang SDK for the SodeomSearch API — an entity-oriented client using stan
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Search(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -260,9 +260,9 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"description"` |  |
-| `"link"` |  |
-| `"title"` |  |
+| `"description"` | Description or snippet of the search result |
+| `"link"` | URL of the search result |
+| `"title"` | Title of the search result |
 
 Operations: List.
 
@@ -287,9 +287,9 @@ Create an instance: `search := client.Search(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `link` | `string` |  |
-| `title` | `string` |  |
+| `description` | `string` | Description or snippet of the search result |
+| `link` | `string` | URL of the search result |
+| `title` | `string` | Title of the search result |
 
 #### Example: List
 

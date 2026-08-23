@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -287,9 +287,9 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `link` |  |
-| `title` |  |
+| `description` | Description or snippet of the search result |
+| `link` | URL of the search result |
+| `title` | Title of the search result |
 
 Operations: list.
 
@@ -314,9 +314,9 @@ Create an instance: `const search = client.Search()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `link` | `string` |  |
-| `title` | `string` |  |
+| `description` | `string` | Description or snippet of the search result |
+| `link` | `string` | URL of the search result |
+| `title` | `string` | Title of the search result |
 
 #### Example: List
 

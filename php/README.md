@@ -247,9 +247,9 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `link` |  |
-| `title` |  |
+| `description` | Description or snippet of the search result |
+| `link` | URL of the search result |
+| `title` | Title of the search result |
 
 Operations: List.
 
@@ -274,9 +274,9 @@ Create an instance: `$search = $client->Search();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `link` | `string` |  |
-| `title` | `string` |  |
+| `description` | `string` | Description or snippet of the search result |
+| `link` | `string` | URL of the search result |
+| `title` | `string` | Title of the search result |
 
 #### Example: List
 

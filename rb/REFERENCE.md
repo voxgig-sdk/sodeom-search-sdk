@@ -93,9 +93,9 @@ search = client.Search
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `String` | Yes |  |
-| `link` | `String` | Yes |  |
-| `title` | `String` | Yes |  |
+| `description` | `String` | Yes | Description or snippet of the search result |
+| `link` | `String` | Yes | URL of the search result |
+| `title` | `String` | Yes | Title of the search result |
 
 ### Operations
 

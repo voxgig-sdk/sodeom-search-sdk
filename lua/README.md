@@ -231,9 +231,9 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `link` |  |
-| `title` |  |
+| `description` | Description or snippet of the search result |
+| `link` | URL of the search result |
+| `title` | Title of the search result |
 
 Operations: List.
 
@@ -258,9 +258,9 @@ Create an instance: `local search = client:Search(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `link` | `string` |  |
-| `title` | `string` |  |
+| `description` | `string` | Description or snippet of the search result |
+| `link` | `string` | URL of the search result |
+| `title` | `string` | Title of the search result |
 
 #### Example: List
 

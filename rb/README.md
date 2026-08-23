@@ -237,9 +237,9 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `link` |  |
-| `title` |  |
+| `description` | Description or snippet of the search result |
+| `link` | URL of the search result |
+| `title` | Title of the search result |
 
 Operations: List.
 
@@ -264,9 +264,9 @@ Create an instance: `search = client.Search`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `String` |  |
-| `link` | `String` |  |
-| `title` | `String` |  |
+| `description` | `String` | Description or snippet of the search result |
+| `link` | `String` | URL of the search result |
+| `title` | `String` | Title of the search result |
 
 #### Example: List
 

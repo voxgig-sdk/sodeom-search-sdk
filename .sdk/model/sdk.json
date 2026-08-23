@@ -36,18 +36,21 @@
               "active": true,
               "name": "description",
               "req": true,
+              "short": "Description or snippet of the search result",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "link",
               "req": true,
+              "short": "URL of the search result",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "title",
               "req": true,
+              "short": "Title of the search result",
               "type": "`$STRING`"
             }
           ],

@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "SodeomSearch",
+            "slug": "sodeom-search",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -51,16 +54,19 @@ def make_config():
           {
             "name": "description",
             "req": True,
+            "short": "Description or snippet of the search result",
             "type": "`$STRING`",
           },
           {
             "name": "link",
             "req": True,
+            "short": "URL of the search result",
             "type": "`$STRING`",
           },
           {
             "name": "title",
             "req": True,
+            "short": "Title of the search result",
             "type": "`$STRING`",
           },
         ],
