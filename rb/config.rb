@@ -28,6 +28,7 @@ module SodeomSearchConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
