@@ -23,8 +23,7 @@ class Search
 /** Request payload for Search#list. */
 class SearchListMatch
 {
-    public ?string $description = null;
-    public ?string $link = null;
-    public ?string $title = null;
+    public ?int $page = null;
+    public string $q;
 }
 

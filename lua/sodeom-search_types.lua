@@ -12,9 +12,8 @@
 ---@field title string
 
 ---@class SearchListMatch
----@field description? string
----@field link? string
----@field title? string
+---@field page? number
+---@field q string
 
 local M = {}
 

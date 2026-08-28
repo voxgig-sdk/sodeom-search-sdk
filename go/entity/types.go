@@ -21,9 +21,8 @@ type Search struct {
 
 // SearchListMatch is the typed request payload for Search.ListTyped.
 type SearchListMatch struct {
-	Description *string `json:"description,omitempty"`
-	Link *string `json:"link,omitempty"`
-	Title *string `json:"title,omitempty"`
+	Page *int `json:"page,omitempty"`
+	Q string `json:"q"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

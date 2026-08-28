@@ -12,8 +12,7 @@ export interface Search {
 }
 
 export interface SearchListMatch {
-  description?: string
-  link?: string
-  title?: string
+  page?: number
+  q: string
 }
 

@@ -22,7 +22,9 @@ class Search(TypedDict):
     title: str
 
 
-class SearchListMatch(TypedDict, total=False):
-    description: str
-    link: str
-    title: str
+class SearchListMatchRequired(TypedDict):
+    q: str
+
+
+class SearchListMatch(SearchListMatchRequired, total=False):
+    page: int

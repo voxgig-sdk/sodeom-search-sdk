@@ -27,18 +27,14 @@ Search = Struct.new(
 
 # Request payload for Search#list.
 #
-# @!attribute [rw] description
-#   @return [String, nil]
+# @!attribute [rw] page
+#   @return [Integer, nil]
 #
-# @!attribute [rw] link
-#   @return [String, nil]
-#
-# @!attribute [rw] title
-#   @return [String, nil]
+# @!attribute [rw] q
+#   @return [String]
 SearchListMatch = Struct.new(
-  :description,
-  :link,
-  :title,
+  :page,
+  :q,
   keyword_init: true
 )
 
