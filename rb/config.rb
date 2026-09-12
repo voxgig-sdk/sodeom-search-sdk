@@ -50,6 +50,7 @@ module SodeomSearchConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "link",
               "req" => true,
               "short" => "URL of the search result",
@@ -91,9 +92,13 @@ module SodeomSearchConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/search",
-                  "parts" => [
-                    "api",
-                    "search",
+                  "segments" => [
+                    {
+                      "lit" => "api",
+                    },
+                    {
+                      "lit" => "search",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -105,6 +110,10 @@ module SodeomSearchConfig
                     "req" => "`reqdata`",
                     "res" => "`body.results`",
                   },
+                  "parts" => [
+                    "api",
+                    "search",
+                  ],
                 },
               ],
             },

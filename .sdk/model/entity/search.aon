@@ -12,6 +12,7 @@ main: kit: entity: search: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "link"
       req: true
       short: "URL of the search result"
@@ -53,9 +54,13 @@ main: kit: entity: search: {
           }
           method: "GET"
           orig: "/api/search"
-          parts: [
-            "api"
-            "search"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "search"
+            }
           ]
           select: {
             exist: [
