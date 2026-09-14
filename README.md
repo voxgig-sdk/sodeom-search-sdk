@@ -105,7 +105,7 @@ local results, err = client:Search():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/sodeom-search` | publish pending — [install from git tag](https://github.com/voxgig-sdk/sodeom-search-sdk/releases) |
+| TypeScript | `@voxgig-sdk/sodeom-search-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/sodeom-search-sdk/releases) |
 | Python | `voxgig-sdk-sodeom-search` | publish pending — [install from git tag](https://github.com/voxgig-sdk/sodeom-search-sdk/releases) |
 | PHP | `voxgig-sdk/sodeom-search` | publish pending — [install from git tag](https://github.com/voxgig-sdk/sodeom-search-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/sodeom-search-sdk/go` | `go get github.com/voxgig-sdk/sodeom-search-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Search():list()
 ### TypeScript
 
 ```ts
-import { SodeomSearchSDK } from '@voxgig-sdk/sodeom-search'
+import { SodeomSearchSDK } from '@voxgig-sdk/sodeom-search-sdk'
 
 const client = new SodeomSearchSDK()
 

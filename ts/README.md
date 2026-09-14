@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { SodeomSearchSDK } from '@voxgig-sdk/sodeom-search'
+import { SodeomSearchSDK } from '@voxgig-sdk/sodeom-search-sdk'
 
 const client = new SodeomSearchSDK()
 ```
@@ -407,7 +407,7 @@ sodeom-search/
 Import the SDK from the package root:
 
 ```ts
-import { SodeomSearchSDK } from '@voxgig-sdk/sodeom-search'
+import { SodeomSearchSDK } from '@voxgig-sdk/sodeom-search-sdk'
 ```
 
 ### Entity state
