@@ -105,12 +105,12 @@ local results, err = client:Search():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/sodeom-search-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/sodeom-search-sdk/releases) |
-| Python | `voxgig-sdk-sodeom-search` | publish pending — [install from git tag](https://github.com/voxgig-sdk/sodeom-search-sdk/releases) |
-| PHP | `voxgig-sdk/sodeom-search` | publish pending — [install from git tag](https://github.com/voxgig-sdk/sodeom-search-sdk/releases) |
+| TypeScript | `@voxgig-sdk/sodeom-search-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/sodeom-search-sdk/tags) |
+| Python | `voxgig-sdk-sodeom-search` | publish pending — [install from git tag](https://github.com/voxgig-sdk/sodeom-search-sdk/tags) |
+| PHP | `voxgig-sdk/sodeom-search` | publish pending — [install from git tag](https://github.com/voxgig-sdk/sodeom-search-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/sodeom-search-sdk/go` | `go get github.com/voxgig-sdk/sodeom-search-sdk/go@latest` |
-| Ruby | `voxgig-sdk-sodeom-search` | publish pending — [install from git tag](https://github.com/voxgig-sdk/sodeom-search-sdk/releases) |
-| Lua | `voxgig-sdk-sodeom-search` | publish pending — [install from git tag](https://github.com/voxgig-sdk/sodeom-search-sdk/releases) |
+| Ruby | `voxgig-sdk-sodeom-search` | publish pending — [install from git tag](https://github.com/voxgig-sdk/sodeom-search-sdk/tags) |
+| Lua | `voxgig-sdk-sodeom-search` | publish pending — [install from git tag](https://github.com/voxgig-sdk/sodeom-search-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/sodeom-search-sdk/go-cli` | `go install github.com/voxgig-sdk/sodeom-search-sdk/go-cli/cmd/sodeom-search@latest` |
 | Go MCP server | `github.com/voxgig-sdk/sodeom-search-sdk/go-mcp` | `go get github.com/voxgig-sdk/sodeom-search-sdk/go-mcp@latest` |
 
